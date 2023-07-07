@@ -1,0 +1,29 @@
+.app {
+  text-align: center;
+  background-color: #F8F0FB; /* パステルカラーの背景 */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 30%;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #E0BBE4; /* パステルカラーのボーダー */
+  border-radius: 10px;
+  background-color: #957DAD; /* パステルカラーのカード */
+  color: #D291BC; /* パステルカラーのテキスト */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h2, .card p {
+  margin: 0.5em 0;
+}
