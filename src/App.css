@@ -1,6 +1,12 @@
 .app {
   text-align: center;
-  background-color: #F8F0FB; /* パステルカラーの背景 */
+  /* background-color: #F8F0FB; パステルカラーの背景 */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100vw; /* 画面全体に広げる */
+  height: 100vh; /* 画面全体に広げる */
 }
 
 .container {
@@ -10,14 +16,15 @@
 }
 
 .card {
-  width: 30%;
+  width: 20%;
   margin: 1em;
   padding: 1em;
-  border: 1px solid #E0BBE4; /* パステルカラーのボーダー */
   border-radius: 10px;
-  background-color: #957DAD; /* パステルカラーのカード */
-  color: #D291BC; /* パステルカラーのテキスト */
+  background-color: #ffffff; /* 背景色は白色 */
+  color: #000000; /* テキストは黒色 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .card img {
   width: 100%;
