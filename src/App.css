@@ -1,12 +1,10 @@
 .app {
   text-align: center;
-  /* background-color: #F8F0FB; パステルカラーの背景 */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  width: 100vw; /* 画面全体に広げる */
-  height: 100vh; /* 画面全体に広げる */
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
@@ -20,11 +18,10 @@
   margin: 1em;
   padding: 1em;
   border-radius: 10px;
-  background-color: #ffffff; /* 背景色は白色 */
-  color: #000000; /* テキストは黒色 */
+  background-color: #ffffff;
+  color: #000000;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .card img {
   width: 100%;
@@ -46,3 +43,9 @@ footer {
   padding: 10px 0;
 }
 
+/* Media query for devices with a maximum width of 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Mobile devices will have cards take up full width */
+  }
+}
