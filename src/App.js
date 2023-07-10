@@ -30,12 +30,6 @@ const cards = [
     linkUrl:
       "https://mercury-tree-34e.notion.site/AI-d5bca58ba64e43c0903f7365330ba621",
   },
-  {
-    title: "Card 3",
-    description: "This is card 1",
-    imageUrl: "url_to_image",
-    linkUrl: "url_to_link",
-  },
 ];
 
 const Card = ({ card }) => (
@@ -60,7 +54,7 @@ const App = () => {
   return (
     <Router>
       <div className="app">
-        <h1>はゆかたいしの遊び場</h1>
+        <h1 className="title">はゆかたいしの遊び場</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/yusyoku" element={<Yushoku />} />

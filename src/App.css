@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 .app {
   text-align: center;
   display: flex;
@@ -11,6 +13,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.title {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.5em;
 }
 
 .card {
@@ -33,15 +40,14 @@
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: relative;
   width: 100%;
   background-color: #f8f9fa;
   color: black;
   text-align: center;
   padding: 10px 0;
 }
+
 
 /* Media query for devices with a maximum width of 768px (e.g., mobile devices) */
 @media (max-width: 768px) {
