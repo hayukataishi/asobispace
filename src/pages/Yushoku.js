@@ -2,12 +2,6 @@
 
 import React, { useState } from "react";
 import "./Yushoku.css";
-import { Configuration, OpenAIApi } from "openai";
-
-const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
 
 const Yushoku = () => {
   const [days, setDays] = useState(1);
@@ -22,43 +16,34 @@ const Yushoku = () => {
     event.preventDefault();
     setIsLoading(true);
     // ここで入力データを処理します
-    const apikey = process.env.REACT_APP_OPENAI_API_KEY;
+    const apikey = process.env.REACT_APP_AZURE_KEY;
     console.log({ days, people, budget, items, type, apikey });
 
-    const prompt = `あなたは料理研究家です。
-    以下の条件を元に夕食の献立を考えてください。
-    
-    # 条件
-    期間: ${days}日分
-    一食あたりの量: ${people}人前
-    一食あたりの予算:${budget}円
-    一食あたりの品数: ${items}
-    好きな料理のタイプ: ${type} ##あくまで参考。必ずしも料理のアイデアに含まなくてもよい。
-    
-    # 出力形式
-    # 一日ごとの料理
-    {N}日目
-    料理名: {料理名}
-    材料: {食材名}×{個数} ##改行して表示
-    作り方: {わかりやすくステップごとに出力}
-    
-    # 合計
-    必要なお買い物リスト: {食材名}×{個数}={おおよその予算} ##改行して表示
-    合計予算: {必要な材料のすべての合計値}`;
+    const jsonbody = {
+      "input_data": {
+        "days": days,
+        "people": people,
+        "budget": budget,
+        "items": items,
+        "foodtype": type
+      }
+    }
 
-    const completion = await openai.createChatCompletion({
-      model: "gpt-4-0613", // string;
-      messages: [
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-    });
+    // Fetch APIを使用する場合
+    var response = await fetch('https://asobispace.azurewebsites.net/api/yusyokuGPT?code=' + apikey, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(jsonbody),
+    })
+
+    response = await response.text();
+    console.log(response);
 
     setIsLoading(false);
     // ここでサーバーからの戻り値を模擬します
-    setServerResponse(completion.data.choices[0].message.content);
+    setServerResponse(response);
   };
 
   return (
