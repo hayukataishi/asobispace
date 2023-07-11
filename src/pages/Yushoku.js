@@ -29,7 +29,7 @@ const Yushoku = () => {
       }
     }
 
-    // Fetch APIを使用する場合
+    // Azure FunctionsにPOSTリクエストを送信します
     var response = await fetch('https://asobispace.azurewebsites.net/api/yusyokuGPT?code=' + apikey, {
       method: 'POST',
       headers: {
