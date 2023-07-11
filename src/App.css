@@ -13,15 +13,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100vw;  /* Add this line */
+  height: 100vh; /* Add this line */
+  overflow: auto; /* Add this line */
 }
 
 .title {
   font-family: 'DotGothic16', sans-serif;
   font-size: 1.5em;
+  animation: key .3s ease infinite alternate;
+}
+@keyframes key {
+  0% {transform: translateY(0px);}
+  100% {transform: translateY(-10px);}
 }
 
 .card {
   width: 20%;
+  height: auto;
   margin: 1em;
   padding: 1em;
   border-radius: 10px;

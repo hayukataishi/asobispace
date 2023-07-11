@@ -7,10 +7,11 @@ import Yushoku from "./pages/Yushoku";
 import ChatGPTImg from "./images/ChatGPT.jpg";
 import YushokuImg from "./images/Yusyoku.png";
 import AIKatsuyouImg from "./images/AIKatsuyou.png";
+import IllustrationImg from "./images/Illustration.png";
+import TwitchImg from "./images/Twitch.png";
 
 const cards = [
   // カードのデータをここに追加します。
-
   {
     title: "ChatGPT",
     description: "AIと会話していろいろお願いしてみよう。",
@@ -18,8 +19,15 @@ const cards = [
     linkUrl: "https://chat.openai.com/",
   },
   {
+    title: "Twitch",
+    description: "毎日かじりついてるゲームの配信サイト。3BRをすこれ",
+    imageUrl: TwitchImg,
+    linkUrl:
+      "https://www.twitch.tv/directory/following",
+  },
+  {
     title: "夕食の達人",
-    description: "献立を一緒に考えてくれます",
+    description: "献立を一緒に考えてくれます(自作ツール)",
     imageUrl: YushokuImg,
     linkUrl: "/yusyoku",
   },
@@ -29,6 +37,13 @@ const cards = [
     imageUrl: AIKatsuyouImg,
     linkUrl:
       "https://mercury-tree-34e.notion.site/AI-d5bca58ba64e43c0903f7365330ba621",
+  },
+  {
+    title: "イラストギャラリー",
+    description: "AIを使って描いたイラストを公開しています",
+    imageUrl: IllustrationImg,
+    linkUrl:
+      "https://mercury-tree-34e.notion.site/d40b62d2801643b59ffe55979aaf0456?pvs=4",
   },
 ];
 
