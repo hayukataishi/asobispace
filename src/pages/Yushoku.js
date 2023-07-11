@@ -96,7 +96,7 @@ const Yushoku = () => {
             onChange={(e) => setType(e.target.value)}
           />
         </label>
-        <button type="submit">作成</button>
+        <button type="submit">作成 ※少し時間がかかります</button>
         <textarea value={serverResponse} readOnly />
         {isLoading && <div className="loader"></div>}
       </form>
